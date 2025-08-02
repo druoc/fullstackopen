@@ -1,6 +1,9 @@
 import Header from "./Header";
 
 const Statistics = (props) => {
+  if (props.total === 0) {
+    return <div></div>;
+  }
   return (
     <div>
       <Header headerText={"Statistics"} />

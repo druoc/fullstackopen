@@ -7,6 +7,9 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const total = good + neutral + bad;
+  const average = Math.floor(total / 3);
+  const positive = Math.floor((good / total) * 100);
 
   const handleGoodClick = () => setGood(good + 1);
   const handleNeutralClick = () => setNeutral(neutral + 1);
@@ -19,7 +22,14 @@ const App = () => {
         handleNeutralClick={handleNeutralClick}
         handleBadClick={handleBadClick}
       />
-      <Statistics good={good} neutral={neutral} bad={bad} />
+      <Statistics
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        total={total}
+        average={average}
+        positive={positive}
+      />
     </>
   );
 };

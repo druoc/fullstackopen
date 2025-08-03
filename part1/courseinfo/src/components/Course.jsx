@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Part from "./Part";
 
 const Course = ({ course }) => {
   return (
@@ -6,9 +7,7 @@ const Course = ({ course }) => {
       <Header course={course.name} />
       <ul>
         {course.parts.map((lesson) => (
-          <li key={lesson.id}>
-            {lesson.name} - {lesson.exercises}
-          </li>
+          <Part key={lesson.id} course={lesson} />
         ))}
       </ul>
     </div>
